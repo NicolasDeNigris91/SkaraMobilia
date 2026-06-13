@@ -323,10 +323,10 @@ section { padding: clamp(72px, 14vw, 120px) clamp(20px, 6vw, 56px); }
   background-image: url(visite-fachada.webp);
   background-size: cover;
   background-position: center;
-  min-height: 56vh;
+  aspect-ratio: 3 / 2;
 }
 @media (min-width: 900px) {
-  .visit-photo { min-height: auto; }
+  .visit-photo { aspect-ratio: auto; min-height: auto; }
 }
 .visit-content {
   padding: clamp(56px, 8vw, 96px) clamp(24px, 5vw, 64px);
