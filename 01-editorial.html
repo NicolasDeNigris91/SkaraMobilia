@@ -308,27 +308,48 @@ section { padding: clamp(72px, 14vw, 120px) clamp(20px, 6vw, 56px); }
   margin-top: 4px;
 }
 
-/* visite */
+/* visite (split layout) */
 .visit {
   background: #1a1a1a;
   color: #f5efe2;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 70vh;
+}
+@media (min-width: 900px) {
+  .visit { grid-template-columns: 1.05fr 1fr; }
+}
+.visit-photo {
+  background-image: url(visite-fachada.webp);
+  background-size: cover;
+  background-position: center;
+  min-height: 56vh;
+}
+@media (min-width: 900px) {
+  .visit-photo { min-height: auto; }
+}
+.visit-content {
+  padding: clamp(56px, 8vw, 96px) clamp(24px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 620px;
 }
 .visit h2 {
   font-family: 'Fraunces', serif;
   font-weight: 300;
-  font-size: clamp(30px, 7vw, 52px);
+  font-size: clamp(30px, 6vw, 48px);
   margin-bottom: 14px;
   letter-spacing: -0.01em;
+  line-height: 1.05;
 }
 .visit h2 em { font-style: italic; color: #e3c98a; }
-.visit p { color: #c9beac; font-size: 14px; max-width: 36em; margin: 0 auto 36px; }
+.visit p { color: #c9beac; font-size: 14px; max-width: 32em; margin-bottom: 32px; line-height: 1.7; }
 .visit .ctas {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 320px;
-  margin: 0 auto;
+  max-width: 340px;
 }
 .visit .btn {
   display: block;
@@ -345,7 +366,7 @@ section { padding: clamp(72px, 14vw, 120px) clamp(20px, 6vw, 56px); }
 .visit .btn.primary { background: #b08d3f; color: #1a1a1a; }
 .visit .btn:hover { background: #c9a55a; color: #1a1a1a; }
 .visit .info {
-  margin-top: 48px;
+  margin-top: 36px;
   font-family: 'Fraunces', serif;
   font-style: italic;
   font-size: 15px;
@@ -454,15 +475,16 @@ footer .copy {
     <div class="eyebrow">— Categorias —</div>
     <h2 style="font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px,6vw,40px); letter-spacing:-0.01em;">O que <em style="font-style:italic;color:var(--gold);">fazemos</em>.</h2>
     <div class="grid">
-      <a href="#" class="cat cat-1"><div class="photo"></div><div class="label"><span class="num">01</span><div class="name">Sala</div></div></a>
-      <a href="#" class="cat cat-2"><div class="photo"></div><div class="label"><span class="num">02</span><div class="name">Jantar</div></div></a>
-      <a href="#" class="cat cat-3"><div class="photo"></div><div class="label"><span class="num">03</span><div class="name">Sob medida</div></div></a>
+      <a href="sala.html" class="cat cat-1"><div class="photo"></div><div class="label"><span class="num">01</span><div class="name">Sala</div></div></a>
+      <a href="jantar.html" class="cat cat-2"><div class="photo"></div><div class="label"><span class="num">02</span><div class="name">Jantar</div></div></a>
+      <a href="sobmedida.html" class="cat cat-3"><div class="photo"></div><div class="label"><span class="num">03</span><div class="name">Sob medida</div></div></a>
     </div>
   </div>
 </section>
 
 <section class="visit" id="visite">
-  <div class="container">
+  <div class="visit-photo" role="img" aria-label="Fachada da loja Skara Mobília"></div>
+  <div class="visit-content">
     <div class="eyebrow" style="color:#b08d3f;">— Visite —</div>
     <h2>Venha ao <em>showroom</em>.</h2>
     <p>O que está no catálogo é só uma parte. No showroom você sente a madeira, vê os tecidos, conversa sobre o seu projeto.</p>
